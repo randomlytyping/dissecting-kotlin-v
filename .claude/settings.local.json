@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew compileKotlin)",
+      "WebFetch(domain:memory-alpha.fandom.com)",
+      "WebSearch",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://memory-alpha.fandom.com/api.php?action=query&list=categorymembers&cmtitle=Category:Spacecraft_sections&cmlimit=500&format=json\")",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Intrepid_class_decks&prop=wikitext&format=json\")",
+      "Bash(python3 -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\(d['parse']['wikitext']['*'][:8000]\\)\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=NX_class_decks&prop=wikitext&format=json\")",
+      "Bash(python3 -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\(d['parse']['wikitext']['*'][:6000]\\)\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Constitution_class_decks&prop=wikitext&format=json\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Defiant_class_decks&prop=wikitext&format=json\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Sovereign_class_decks&prop=wikitext&format=json\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Excelsior_class_decks&prop=wikitext&format=json\")",
+      "Bash(python3 -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\(d['parse']['wikitext']['*'][:5000]\\)\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Constitution_II_class_decks&prop=wikitext&format=json\")",
+      "mcp__ide__getDiagnostics",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://memory-alpha.fandom.com/api.php?action=parse&page=Captain%27s_dining_room&prop=wikitext&format=json\")",
+      "Bash(python3 -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\(d['parse']['wikitext']['*'][:4000]\\)\")",
+      "Bash(curl -s -A Mozilla/5.0 https://api.github.com/repos/JetBrains/kotlin/releases/tags/__TRACKED_VAR__)",
+      "Bash(python3 -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\('tag:', d.get\\('tag_name','N/A'\\), 'published:', d.get\\('published_at','N/A'\\), 'created:', d.get\\('created_at','N/A'\\), 'html_url:', d.get\\('html_url','N/A'\\)\\)\")",
+      "Bash(awk 'NR>=750' \"/Users/huyen/Dropbox/RandomlyTyping/Speaking/Kotlin/Dissecting Kotlin V/dk5/src/main/kotlin/rt/example/StarTrek.kt\")",
+      "Bash(./gradlew compileKotlin --console=plain -q)",
+      "Bash(./gradlew compileKotlin --console=plain)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 14_0\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0 Safari/537.36\" \"https://memory-alpha.fandom.com/wiki/Dixon_Hill\" -o /tmp/dixonhill.html)",
+      "Read(//tmp/**)",
+      "Bash(awk '/^val [A-Z].* = Starship\\\\\\(/{ship=$2} /Holodeck\\\\\\(/ && !/data class/ && !/HolodeckProgram/ {count[ship]++} END {for \\(s in count\\) print count[s]\"\\\\t\"s}' \"/Users/huyen/Dropbox/RandomlyTyping/Speaking/Kotlin/Dissecting Kotlin V/dk5/src/main/kotlin/rt/example/StarTrek.kt\")",
+      "Bash(python3 *)",
+      "Bash(./gradlew compileKotlin --console=plain --rerun-tasks)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/Kotlin/KEEP/main/proposals/KEEP-0442-dfa-exhaustiveness.md\")"
+    ]
+  }
+}

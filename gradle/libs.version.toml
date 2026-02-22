@@ -1,0 +1,13 @@
+[versions]
+# Kotlin language and standard library version
+kotlin = "2.1.20"
+# JVM bytecode target version
+jdk = "25"
+# Kotlinx immutable collections
+kotlinx-collections-immutable = "0.5.1"
+
+[libraries]
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections-immutable" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
