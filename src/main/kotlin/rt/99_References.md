@@ -16,6 +16,13 @@
 - Kotlin | What's new in Kotlin 1.5.30: Exhaustive when statements for sealed and boolean subjects
   https://kotlinlang.org/docs/whatsnew1530.html#exhaustive-when-statements-for-sealed-and-boolean-subjects
 
+## Contracts
+
+- Kotlin | What's new in Kotlin 1.3: Contracts
+  https://kotlinlang.org/docs/whatsnew13.html#contracts
+- Kotlin | What's new in Kotlin 2.2.20: Improved Kotlin contracts
+  https://kotlinlang.org/docs/whatsnew2220.html#improved-kotlin-contracts
+
 ## KEEP
 
 - Guard conditions in when-with-subject
@@ -25,7 +32,7 @@
 - Data flow-based exhaustiveness checking
   https://github.com/Kotlin/KEEP/blob/main/proposals/KEEP-0442-dfa-exhaustiveness.md
 
-## Miscellaneous
+## Checks
 
 - Kotlin language specification | 8.11.1 Type-checking expressionsLoad tests
   https://kotlinlang.org/spec/expressions.html#type-checking-expressions
@@ -34,5 +41,9 @@
 - Kotlin language specification | 8.11.2 Containment-checking expressions
   https://kotlinlang.org/spec/expressions.html#containment-checking-expressions
 - Kotlin | in operator https://kotlinlang.org/docs/operator-overloading.html#in-operator
+
+## Types
+- Kotlin language specification | 2 Type System
+  https://kotlinlang.org/spec/type-system.html#introduction-1
 - Kotlin language specification | 3.2 kotlin.Nothing
   https://kotlinlang.org/spec/built-in-types-and-their-semantics.html#kotlin.nothing-builtins

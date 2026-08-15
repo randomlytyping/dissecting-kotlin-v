@@ -44,8 +44,9 @@ kotlin {
   jvmToolchain(libs.versions.jdk.get().toInt())
   compilerOptions {
     freeCompilerArgs.addAll(
-      "-Xdata-flow-based-exhaustiveness",
+//      "-Xdata-flow-based-exhaustiveness",
       "-Xcontext-sensitive-resolution",
+      "-Xopt-in=kotlin.contracts.ExperimentalContracts",
     )
   }
 }

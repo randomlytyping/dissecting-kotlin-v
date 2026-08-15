@@ -260,7 +260,7 @@ sealed interface CrewMember {
 
   fun returnToShip() { println("Beam me up.")}
   fun reportTo(section: Ship.Section) { }
-  fun checkIn()
+  fun checkIn() {}
   fun contactBridge() { println("<name> to bridge.")}
   fun isAllergicTo(food: String): Boolean = false
 
@@ -293,8 +293,8 @@ sealed interface CrewMember {
     sealed interface LineOfficer : Division {
       override val uniformColor: Color get() = Color.Red
 
-      fun gatherSeniorOfficers()
-      fun passOnCommand()
+      fun gatherSeniorOfficers() {}
+      fun passOnCommand() {}
     }
     sealed interface FlightControl : Division {
       override val uniformColor: Color get() = Color.Red
@@ -302,24 +302,24 @@ sealed interface CrewMember {
 
     sealed interface CommunicationsOfficer : Division {
       override val uniformColor: Color get() = Color.Yellow
-      fun awaitIncomingTransmission()
+      fun awaitIncomingTransmission() {}
     }
     sealed interface Engineer : Division {
       override val uniformColor: Color get() = Color.Yellow
 
-      fun repairShuttle()
+      fun repairShuttle() {}
     }
     sealed interface SecurityOfficer : Division {
       override val uniformColor: Color get() = Color.Yellow
-      fun checkPerimeter()
+      fun checkPerimeter() {}
 
-      fun armWith(weapon: Weapon)
+      fun armWith(weapon: Weapon) {}
     }
     sealed interface TacticalOfficer : Division {
       override val uniformColor: Color get() = Color.Yellow
 
-      fun checkShields()
-      fun reroutePower(from: Ship.Section, to: Ship.Section)
+      fun checkShields() {}
+      fun reroutePower(from: Ship.Section, to: Ship.Section) {}
     }
 
     sealed interface Counselor : Division {
@@ -328,16 +328,16 @@ sealed interface CrewMember {
     sealed interface MedicalStaff : Division {
       override val uniformColor: Color get() = Color.Blue
 
-      fun treat(crewMember: CrewMember)
-      fun beginRounds()
+      fun treat(crewMember: CrewMember) {}
+      fun beginRounds() {}
     }
     sealed interface ScienceOfficer : Division {
       override val uniformColor: Color get() = Color.Blue
       val specialties: ImmutableList<Specialty>
-      fun scanForLifeforms()
-      fun analyzeAtmosphere()
+      fun scanForLifeforms() {}
+      fun analyzeAtmosphere() {}
 
-      fun scanForInterstellarAnomalies()
+      fun scanForInterstellarAnomalies() {}
     }
   }
 
@@ -428,6 +428,9 @@ sealed interface CrewMember {
     override val serviceEnd = UNKNOWN_YEAR
     override val academyGraduation = UNKNOWN_YEAR
     override val uniformColor = Color.Red
+    override fun checkIn() = Unit
+    override fun gatherSeniorOfficers() = Unit
+    override fun passOnCommand() = Unit
   }
 }
 

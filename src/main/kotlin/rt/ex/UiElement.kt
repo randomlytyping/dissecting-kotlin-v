@@ -58,6 +58,20 @@ sealed interface ValidationState {
 
 // region // === UI ELEMENT ===
 
+sealed interface Clickable {
+  fun onClick() {}
+}
+
+sealed interface Checkable {
+  val isChecked: Boolean get() = false
+  fun toggle() {}
+}
+
+sealed interface Editable {
+  fun startEdit() {}
+  fun finishEdit() {}
+}
+
 sealed interface UiElement {
   val id: String
   val label: String
@@ -70,7 +84,7 @@ sealed interface UiElement {
     override val isEnabled: Boolean = true,
     override val isVisible: Boolean = true,
     val style: ButtonStyle = ButtonStyle.Primary,
-  ) : UiElement
+  ) : UiElement, Clickable
 
   data class TextField(
     override val id: String,
@@ -78,7 +92,7 @@ sealed interface UiElement {
     override val isEnabled: Boolean = true,
     override val isVisible: Boolean = true,
     val text: String,
-  ) : UiElement
+  ) : UiElement, Editable
 
   data class TextInput(
     override val id: String,
@@ -110,6 +124,22 @@ sealed interface UiElement {
     override val isVisible: Boolean = true,
     val isChecked: Boolean = false,
   ) : UiElement
+
+  data class RadioButton(
+    override val id: String,
+    override val label: String,
+    override val isEnabled: Boolean = true,
+    override val isVisible: Boolean = true,
+    override val isChecked: Boolean = false,
+  ) : UiElement, Checkable, Clickable
+
+  data class Checkbox(
+    override val id: String,
+    override val label: String,
+    override val isEnabled: Boolean = true,
+    override val isVisible: Boolean = true,
+    override val isChecked: Boolean = false,
+  ) : UiElement, Checkable, Clickable
 }
 
 // endregion
